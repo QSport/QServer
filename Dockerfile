@@ -1,4 +1,5 @@
 FROM debian
+#FROM resin/rpi-raspbian
 
 RUN apt-get -y update
 RUN apt-get -y install postgresql git python3 unzip
