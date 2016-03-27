@@ -9,7 +9,6 @@ RUN pip install django
 RUN pip install channels
 
 RUN mkdir qsport
-WORKDIR qsport
-ADD https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip ./
-RUN unzip ngrok-stable-linux-amd64.zip
-RUN git clone https://github.com/QSport/QServer.git
+WORKDIR qsport/qserver
+ENTRYPOINT ["python3", "manage.py"]
+CMD ["runserver", "0.0.0.0:8000"]
